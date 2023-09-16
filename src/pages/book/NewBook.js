@@ -1,5 +1,9 @@
 import { useState } from "react";
 import Header from "../../components/Header"
+import Input from "../../components/Input";
+import Label from "../../components/Label";
+import InputButton from "../../components/InputButton";
+import Footer from "../../components/Footer";
 
 const NewBook = () => {
     const [name, setName] = useState("");
@@ -21,47 +25,47 @@ const NewBook = () => {
             <Header />
             <div className="w-full h-full max-w-2xl m-auto flex items-center bg-teal-300 mt-20 rounded">
                 <form onSubmit={handleSubmit} className="m-auto text-left">
+                    <h1 className="text-2xl">Cadastro de livros</h1>
                     <div className="mt-2">
-                        <label htmlFor="name">Nome:</label>
+                        <Label labelFor={name} value={"Nome:"}/>
                         <div>
-                            <input className="rounded-full" type="text" name="name" placeholder="Digite o nome do livro" onChange={(e) => setName((e.target.value))} value={name}></input>
+                            <Input type={"text"} name={name} placeHolder={"Digite o nome do livro"} setPropertie={setName} value={name}/>
                         </div>
                     </div>
                     <div className="mt-2">
-                        <label htmlFor="bio">Bio:</label>
+                        <Label labelFor={bio} value={"Bio:"}/>
                         <div>
-                            <input type="text" name="bio" placeholder="Digite a bio do livro" onChange={(e) => setBio((e.target.value))} value={bio} />
+                            <Input type={"text"} name={bio} placeHolder={"Digite a bio do livro"} setPropertie={setBio} value={bio}/>
                         </div>
                     </div>
                     <div className="mt-2">
-                        <label htmlFor="pages">Paginas:</label>
+                        <Label labelFor={pages} value={"Paginas:"}/>
                         <div>
-                            <input type="number" name="pages" placeholder="Digite a quantidade de paginas" onChange={(e) => setPages((e.target.value))} value={pages} />
+                            <Input type={"number"} name={pages} placeHolder={"Digite a quantidade de paginas"} setPropertie={setPages} value={pages}/>
                         </div>
                     </div>
                     <div className="mt-2">
-                        <label htmlFor="author">Author:</label>
+                        <Label labelFor={author} value={"Author:"}/>
                         <div>
-                            <input type="text" name="author" placeholder="Digite o nome do author" onChange={(e) => setAuthor((e.target.value))} value={author} />
+                            <Input type={"text"} name={author} placeHolder={"Digite o nome do author"} setPropertie={setAuthor} value={author}/>
                         </div>
                     </div>
                     <div className="mt-2">
-                        <label htmlFor="edition">Edição:</label>
+                        <Label labelFor={edition} value={"Edição:"}/>
                         <div>
-                            <input type="number" name="edition" placeholder="Digite a edição" onChange={(e) => setEdition((e.target.value))} value={edition} />
+                            <Input type={"number"} name={edition} placeHolder={"Digite a edição"} setPropertie={setEdition} value={edition}/>
                         </div>
                     </div>
                     <div className="mt-2">
-                        <label htmlFor="publishingCompany">Editora:</label>
+                        <Label labelFor={publishingCompany} value={"Editora:"}/>
                         <div>
-                            <input type="text" name="publishingCompany" placeholder="Digite a editora" onChange={(e) => setPublishCompany((e.target.value))} value={publishingCompany} />
+                            <Input type={"text"} name={publishingCompany} placeHolder={"Digite a editora"} setPropertie={setPublishCompany} value={publishingCompany}/>
                         </div>
                     </div>
-                    <div className="mt-4 ml-12">
-                        <input type="submit" value="Enviar" className="bg-teal-600 rounded w-20"/>
-                    </div>
+                    <InputButton labelValue={"Enviar"}/>
                 </form>
             </div>
+            <Footer />
         </>
     )
 }

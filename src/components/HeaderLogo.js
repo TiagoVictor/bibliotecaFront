@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom";
+
 const HeaderLogo = () => {
     return (
-        <p className="text-2xl">
-            My<span className="font-bold italic">Library</span>
-        </p>
+        <Link to="/">
+            <p className="text-2xl">
+                My<span className="font-bold italic">Library</span>
+            </p>
+        </Link>
     )
 }
 

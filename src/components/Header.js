@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import HeaderLogo from "./HeaderLogo";
+import Footer from "./Footer";
 
 const Header = () => {
     return (
@@ -11,6 +12,7 @@ const Header = () => {
                 <Link to="/new-book">
                     <Button name={"Cadastrar Livro"} />
                 </Link>
+                <Footer />
             </div>
         </nav>
     )
