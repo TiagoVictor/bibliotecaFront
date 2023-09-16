@@ -5,7 +5,7 @@ const About = () => {
     return(
         <>
             <Header />
-            <p>Contato</p>
+            <p>Sobre</p>
             <Footer />
         </>
     )
