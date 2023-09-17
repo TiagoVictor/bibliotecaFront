@@ -4,6 +4,7 @@ import Input from "../../components/Input";
 import Label from "../../components/Label";
 import InputButton from "../../components/InputButton";
 import Footer from "../../components/Footer";
+import axios from "axios";
 
 const NewBook = () => {
     const [name, setName] = useState("");
@@ -16,8 +17,19 @@ const NewBook = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("Evento do submit");
-        console.log(name, bio, pages, author, edition, publishingCompany);
+
+        axios({
+            method: "post",
+            url: "https://localhost:7240/book",
+            data: {
+              name: name,
+              bio: bio,
+              pages: pages,
+              author: author,
+              edition: edition,
+              publishingCompany: publishingCompany
+            },
+          });
     }
 
     return (

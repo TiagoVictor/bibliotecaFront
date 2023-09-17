@@ -9,8 +9,8 @@ const Header = () => {
             <div className="w-full h-full max-w-7xl m-auto flex items-center justify-between">
                 <HeaderLogo />
 
-                <Link to="/new-book">
-                    <Button name={"Cadastrar Livro"} />
+                <Link to="/book">
+                    <Button name={"Livros"} />
                 </Link>
                 <Footer />
             </div>
