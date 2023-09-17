@@ -4,11 +4,12 @@ import {
     Routes,
 } from "react-router-dom";
 
-import Dashboard from "../pages/dashboard/Dashboard";
-import NewBook from "../pages/book/NewBook";
-import About from "../pages/about/About";
-import Contact from "../pages/contact/Contact";
-import Privacy from "../pages/privacy/Privacy";
+import Dashboard from "../pages/Dashboard";
+import NewBook from "../pages/NewBook";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import Privacy from "../pages/Privacy";
+import Book from "../pages/Book";
 
 const AppRoutes = () => {
     return (
@@ -19,6 +20,7 @@ const AppRoutes = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/privacy" element={<Privacy />} />
+                <Route path="/book" element={<Book />} />
             </Routes>
         </BrowserRouter>
     )

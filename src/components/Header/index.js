@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Button from "./Button";
+import Button from "../Button";
 import HeaderLogo from "./HeaderLogo";
-import Footer from "./Footer";
+import Footer from "../Footer";
 
 const Header = () => {
     return (
