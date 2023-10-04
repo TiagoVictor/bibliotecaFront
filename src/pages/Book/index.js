@@ -9,6 +9,11 @@ const Book = () => {
 
     const [item, setItem] = useState([]);
 
+    const fake = [
+        {id:1, name:"Tiago", bio:"Bio teste",pages: 3, author: "Editor Teste", edition: 2, publishingCompany: "Editora Teste"},
+        {id:2, name:"Victor", bio:"Bio teste 2",pages: 4, author: "Editor Teste 2", edition: 3, publishingCompany: "Editora Teste 2"},
+        {id:3, name:"Oliveira", bio:"Bio teste 3",pages: 5, author: "Editor Teste 3", edition: 4, publishingCompany: "Editora Teste 3"}
+    ]
 
     useEffect(() => {
         axios({
@@ -17,6 +22,8 @@ const Book = () => {
             responseType: "json",
         }).then(function (response) {
             setItem(response.data);
+        }).catch(function (error){
+            setItem(fake)
         })
     }, [])
 
