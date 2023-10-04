@@ -1,4 +1,4 @@
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Header from "../../components/Header";
@@ -39,22 +39,22 @@ const EditBook = (props) => {
             method: "put",
             url: `https://localhost:7240/Book?id=${id}`,
             data: {
-              name: name,
-              bio: bio,
-              pages: pages,
-              author: author,
-              edition: edition,
-              publishingCompany: publishingCompany
+                name: name,
+                bio: bio,
+                pages: pages,
+                author: author,
+                edition: edition,
+                publishingCompany: publishingCompany
             },
-          }).then(function (response){
-            if (response.data.success === true){
+        }).then(function (response) {
+            if (response.data.success === true) {
                 navigate("/book");
             } else {
                 console.log(response.data.message);
             }
-          }).catch(function (response){
+        }).catch(function (response) {
             console.log(response.response.data.message);
-          });
+        });
     }
 
     return (
@@ -64,42 +64,42 @@ const EditBook = (props) => {
                 <form onSubmit={handleSubmit} className="m-auto text-left">
                     <h1 className="text-2xl">Cadastro de livros</h1>
                     <div className="mt-2">
-                        <Label labelFor={"name"} value={"Nome:"}/>
+                        <Label labelFor={"name"} value={"Nome:"} />
                         <div>
-                            <Input type={"text"} name={"name"} placeHolder={"Digite o nome do livro"} setPropertie={setName} value={name}/>
+                            <Input type={"text"} name={"name"} placeHolder={"Digite o nome do livro"} setPropertie={setName} value={name} />
                         </div>
                     </div>
                     <div className="mt-2">
-                        <Label labelFor={"bio"} value={"Bio:"}/>
+                        <Label labelFor={"bio"} value={"Bio:"} />
                         <div>
-                            <Input type={"text"} name={"bio"} placeHolder={"Digite a bio do livro"} setPropertie={setBio} value={bio}/>
+                            <Input type={"text"} name={"bio"} placeHolder={"Digite a bio do livro"} setPropertie={setBio} value={bio} />
                         </div>
                     </div>
                     <div className="mt-2">
-                        <Label labelFor={"pages"} value={"Paginas:"}/>
+                        <Label labelFor={"pages"} value={"Paginas:"} />
                         <div>
-                            <Input type={"number"} name={"pages"} placeHolder={"Digite a quantidade de paginas"} setPropertie={setPages} value={pages}/>
+                            <Input type={"number"} name={"pages"} placeHolder={"Digite a quantidade de paginas"} setPropertie={setPages} value={pages} />
                         </div>
                     </div>
                     <div className="mt-2">
-                        <Label labelFor={"author"} value={"Author:"}/>
+                        <Label labelFor={"author"} value={"Author:"} />
                         <div>
-                            <Input type={"text"} name={"author"} placeHolder={"Digite o nome do author"} setPropertie={setAuthor} value={author}/>
+                            <Input type={"text"} name={"author"} placeHolder={"Digite o nome do author"} setPropertie={setAuthor} value={author} />
                         </div>
                     </div>
                     <div className="mt-2">
-                        <Label labelFor={"edition"} value={"Edição:"}/>
+                        <Label labelFor={"edition"} value={"Edição:"} />
                         <div>
-                            <Input type={"number"} name={"edition"} placeHolder={"Digite a edição"} setPropertie={setEdition} value={edition}/>
+                            <Input type={"number"} name={"edition"} placeHolder={"Digite a edição"} setPropertie={setEdition} value={edition} />
                         </div>
                     </div>
                     <div className="mt-2">
-                        <Label labelFor={"publishingCompany"} value={"Editora:"}/>
+                        <Label labelFor={"publishingCompany"} value={"Editora:"} />
                         <div>
-                            <Input type={"text"} name={"publishingCompany"} placeHolder={"Digite a editora"} setPropertie={setPublishCompany} value={publishingCompany}/>
+                            <Input type={"text"} name={"publishingCompany"} placeHolder={"Digite a editora"} setPropertie={setPublishCompany} value={publishingCompany} />
                         </div>
                     </div>
-                    <InputButton labelValue={"Editar"}/>
+                    <InputButton labelValue={"Editar"} />
                 </form>
             </div>
             <Footer />
