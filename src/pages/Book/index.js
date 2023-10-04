@@ -39,6 +39,7 @@ const Book = () => {
                             <th>Autor</th>
                             <th>Edição</th>
                             <th>Editora</th>
+                            <th>Editar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,6 +52,11 @@ const Book = () => {
                                 <td>{book.author}</td>
                                 <td>{book.edition}</td>
                                 <td>{book.publishingCompany}</td>
+                                <td>
+                                    <Link to={`/edit-book/${book.id}`}>
+                                        <Button name={"Editar"}/>
+                                    </Link>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
